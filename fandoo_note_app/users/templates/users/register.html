@@ -1,15 +1,17 @@
-{% extends "users/base.html" %}
+<!--html page for register new user -->
+{% extends "users/base1.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
     <div class="content-section">
         <form method="POST">
+            <!--csrf token  is to protection against Cross Site Request Forgeries-->
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Join Today</legend>
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                <button id="registerbtn" class="btn btn-outline-info" type="submit">Sign Up</button>
             </div>
         </form>
         <div class="border-top pt-3">
